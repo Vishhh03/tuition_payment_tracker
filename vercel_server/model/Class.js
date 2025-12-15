@@ -7,10 +7,11 @@ const ClassSchema = new mongoose.Schema(
       ref: 'Student',
       required: true
     },
-    date: { type: Date, required: true },
+    date: { type: String, required: true },
+    time: { type: String, required: true },
     status: {
       type: String,
-      enum: ['PENDING', 'COMPLETED'],
+      enum: ['PENDING', 'COMPLETED', 'CANCELLED'],
       default: 'PENDING'
     }
   },

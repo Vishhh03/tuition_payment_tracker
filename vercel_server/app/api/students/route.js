@@ -10,7 +10,9 @@ export async function GET() {
 export async function POST(req) {
   await connectDB();
   const body = await req.json();
-  const student = new Student(body);
+  const { initialBalance } = body;
+  const balance = parseFloat(initialBalance) || 0;
+  const student = new Student({ ...body, balance });
   await student.save();
   return Response.json(student);
 }
