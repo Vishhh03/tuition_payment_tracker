@@ -4,12 +4,12 @@
   "outputDirectory": "dist",
   "builds": [
     {
-      "src": "vercel_server/app/api/*.js",
+      "src": "vercel_server/app/api/**/*.js",
       "use": "@vercel/node@20.0.0",
       "config": {
         "includeFiles": [
           "vercel_server/app/lib/**",
-          "vercel_server/app/models/**"
+          "vercel_server/model/**"
         ]
       }
     }
